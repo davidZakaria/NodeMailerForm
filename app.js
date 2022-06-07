@@ -60,7 +60,6 @@ app.post("/send", (req, res) => {
   console.log("Message sent: %s", info.messageId);
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   res.render("contact", { msg: "Email has been sent yabne", layout: false });
-  // main().catch(console.error);
 });
 
 app.listen(3000, () => {
