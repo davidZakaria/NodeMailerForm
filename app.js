@@ -3,6 +3,7 @@ const nodeparser = require("body-parser");
 const nodemailer = require("nodemailer");
 const { engine } = require("express-handlebars");
 const path = require("path");
+require("dotenv").config();
 
 const app = express();
 
@@ -45,7 +46,7 @@ app.post("/send", (req, res) => {
     secure: false, // true for 465, false for other ports
     auth: {
       user: "davidsamii3@gmail.com", // generated ethereal user
-      pass: "wzdfpfxbjiheduut", // generated ethereal password
+      pass: process.env.Gmail_passauth, // generated ethereal password
     },
   });
   // send mail with defined transport object
